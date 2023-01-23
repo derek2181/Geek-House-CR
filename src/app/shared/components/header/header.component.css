@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+mat-drawer{
+    width: 100px;
+    padding: 10px;
+}
+#sandwich{
+  margin-right: 10px;
+}
