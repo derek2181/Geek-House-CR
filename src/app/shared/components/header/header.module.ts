@@ -4,7 +4,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list'; 
 import { HeaderComponent } from './header.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { NavListModule } from './nav-list/nav-list.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -18,7 +17,6 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
-    FlexLayoutModule,
     MatFormFieldModule,
     MatSidenavModule,
     NavListModule,

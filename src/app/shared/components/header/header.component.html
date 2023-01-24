@@ -1,16 +1,16 @@
 
    <mat-toolbar   style="background-color: rgb(39, 38, 38);;padding: 20px 0;">
    
-   <div fxLayout="row" fxFlex="100%" style="margin:0 5%;"  fxLayoutAlign="space-between center">
-    <div id="sandwich" fxHide.gt-md>
+   <div class="flex flex-1 justify-between items-center" style="margin:0 5%;" >
+    <div id="sandwich"class="md:hidden" fxHide.gt-md>
       <button mat-raised-button color="primary" id="sandwich"  (click)="onToggleSidenav()">
           <mat-icon >menu</mat-icon>
       </button>
     </div>
     <div >
-      <img src="../../../../assets/images/quebinFinalTransparent.png" height="20px" alt="">
+      <img src="../../../../assets/images/quebinFinalTransparent.png" class="h-7" alt="">
     </div>
-    <div fxHide="true" fxShow.gt-md="true"  >
+    <div class="md:block hidden" fxHide="true" fxShow.gt-md="true"  >
       <nav>
         <ul>
           <a href="
@@ -23,12 +23,12 @@
         </ul>
       </nav>
     </div>
-    <div fxHide="true" fxLayoutAlign="center"  fxShow.gt-md="true" >
-      <form action="">
-      <button mat-raised-button color="primary"  style="margin-right:10px; padding: 0; height: 25px;" > 
-      <mat-icon style="color: white;">search</mat-icon>
+    <div class="md:block hidden"  >
+      <form class="flex items-center">
+      <button mat-raised-button color="primary" class="mr-1 p-0 h-1 flex justify-center"  > 
+      <mat-icon style="color: white;" class="text-sm" >search</mat-icon>
       </button>
-        <input matInput type="search" style=" font-size: 0.6rem; height: 100%;" placeholder="Buscar...">
+      <input type="text" name="price" id="price" class="block p-0.5 border-gray-300  focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
       </form>
      
     </div>
