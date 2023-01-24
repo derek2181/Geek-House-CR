@@ -13,18 +13,23 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $GeekHouseCR-primary:  mat.define-palette(mat.$blue-palette, A200, A100, A400);;
+$GeekHouseCR-secondary: mat.define-palette(mat.$green-palette, A200, A100, A400);
+
 $GeekHouseCR-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $GeekHouseCR-warn: mat.define-palette(mat.$red-palette);
+
+// $GeekHouseCR-dark: mat.define-palette(mat.$black,600);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $GeekHouseCR-theme: mat.define-light-theme((
   color: (
     primary: $GeekHouseCR-primary,
+    secondary:$GeekHouseCR-secondary,
     accent: $GeekHouseCR-accent,
-    warn: $GeekHouseCR-warn,
+    warn: $GeekHouseCR-warn
   )
 ));
 

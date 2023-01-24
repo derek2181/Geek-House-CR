@@ -7,7 +7,9 @@ import { HeaderComponent } from './header.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { NavListModule } from './nav-list/nav-list.module';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [ HeaderComponent],
@@ -17,8 +19,12 @@ import { NavListModule } from './nav-list/nav-list.module';
     MatIconModule,
     MatGridListModule,
     FlexLayoutModule,
+    MatFormFieldModule,
     MatSidenavModule,
-    NavListModule
+    NavListModule,
+    MatButtonModule,
+    MatInputModule
+   
   ],
   exports:[HeaderComponent, NavListModule]
 })

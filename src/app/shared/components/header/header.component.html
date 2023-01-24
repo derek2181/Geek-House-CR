@@ -1,21 +1,38 @@
 
- 
-  
-
-   <mat-toolbar color="primary">
-    <div class="example-sidenav-content">
-     
-    </div>
-    <div id="sandwich" fxHide.gt-xs>
-      <button mat-icon-button (click)="onToggleSidenav()">
-          <mat-icon>menu</mat-icon>
+   <mat-toolbar   style="background-color: rgb(39, 38, 38);;padding: 20px 0;">
+   
+   <div fxLayout="row" fxFlex="100%" style="margin:0 5%;"  fxLayoutAlign="space-between center">
+    <div id="sandwich" fxHide.gt-md>
+      <button mat-raised-button color="primary" id="sandwich"  (click)="onToggleSidenav()">
+          <mat-icon >menu</mat-icon>
       </button>
     </div>
-    
-   <span>GeekHouse CR</span>
-  
-
-  
+    <div >
+      <img src="../../../../assets/images/quebinFinalTransparent.png" height="20px" alt="">
+    </div>
+    <div fxHide="true" fxShow.gt-md="true"  >
+      <nav>
+        <ul>
+          <a href="
+          "> <li>Inicio</li></a>
+         
+          <a href="
+          "> <li>Productos</li></a>
+          <a href="
+          "> <li>Acerca de</li></a>
+        </ul>
+      </nav>
+    </div>
+    <div fxHide="true" fxLayoutAlign="center"  fxShow.gt-md="true" >
+      <form action="">
+      <button mat-raised-button color="primary"  style="margin-right:10px; padding: 0; height: 25px;" > 
+      <mat-icon style="color: white;">search</mat-icon>
+      </button>
+        <input matInput type="search" style=" font-size: 0.6rem; height: 100%;" placeholder="Buscar...">
+      </form>
+     
+    </div>
+   </div> 
   
 
  </mat-toolbar>

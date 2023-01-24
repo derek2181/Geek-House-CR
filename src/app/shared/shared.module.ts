@@ -13,12 +13,12 @@ import { NavListModule } from './components/header/nav-list/nav-list.module';
   ],
   imports: [
     CommonModule,
-    HeaderModule,
-   
+    
+    HeaderModule,  
   ],
   exports:[ 
     HeaderModule,
-   
+
   ]
 })
 export class SharedModule {

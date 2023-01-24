@@ -11,4 +11,5 @@ export class HeaderComponent {
   public onToggleSidenav = ()=>{
     this.sidenavToggle.emit();
   }
+  value = 'Clear me';
 }
