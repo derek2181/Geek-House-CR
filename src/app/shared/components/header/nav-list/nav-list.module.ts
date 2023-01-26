@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { NavListComponent } from './nav-list.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -12,7 +11,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     MatListModule,
     MatIconModule,
-    FlexLayoutModule,
+   
     RouterModule
   ],
   exports:[NavListComponent]

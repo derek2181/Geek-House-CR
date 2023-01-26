@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,6 +20,7 @@ import {MatIconModule} from '@angular/material/icon';
     SharedModule,
     MatSidenavModule,
     MatIconModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

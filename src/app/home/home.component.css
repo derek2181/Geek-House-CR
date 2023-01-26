@@ -1,3 +1,15 @@
-p{
-    height: 100vh;
-}
+
+
+  .owl-prev, .owl-next {
+      position:absolute !important;
+   }
+
+  .owl-prev {
+      left:0 !important;
+      top: 200px !important;
+   }
+
+   .owl-dot, .owl-carousel .owl-nav .owl-next{
+      right:0 !important;
+      top:200px !important;
+   }
