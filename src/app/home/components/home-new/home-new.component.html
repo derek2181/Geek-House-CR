@@ -1,0 +1,20 @@
+<div class="md:mx-20 mx-3 pt-9">
+    <div class="flex items-center justify-between mb-5">
+      <h1 class="text-3xl font-semibold">Lo nuevo</h1>
+      <a routerLink="/" class="hover:underline">Ver todo</a>
+    </div>
+    <div class="relative">
+      <owl-carousel-o
+        class="flex flex-wrap gap-2 md:gap-5 mb-10 justify-center md:justify-start"
+        [options]="customOptions"
+      >
+        <ng-container *ngFor="let _ of [].constructor(10)">
+          <ng-template carouselSlide>
+            <div class="flex justify-center">
+              <app-product-card></app-product-card></div
+          ></ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
