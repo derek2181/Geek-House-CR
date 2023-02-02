@@ -1,0 +1,83 @@
+<div class="md:mx-20 mx-3 mt-10  ">
+    <h1 class="text-3xl mb-14  font-semibold text-center">Categorias</h1>
+    <div class=" lg:flex lg:flex-row justify-evenly hidden  ">
+      <div class="p-3 rounded-full shadow-md" style="background: #056081;"  >
+        <a href="">
+        <div class=" rounded-full p-14 hover:scale-105 hover:cursor-pointer transition-category" style="background: #0A98CC;">
+
+        
+        <img src="../../assets/images/controller.png" class="rounded-2xl h-36" alt="">
+       
+      </div>
+    </a>
+      </div>
+      <div class="p-3 rounded-full  shadow-md" style="background: #bd8f11;"  >
+        <a href="">
+        <div class=" rounded-full p-14 hover:scale-105 hover:cursor-pointer transition-category" style="background: #F6BC16;">
+
+        
+        <img src="../../assets/images/pop.png" class="rounded-2xl h-36" alt="">
+       
+      </div>
+    </a>
+      </div>
+ 
+      <div class="p-3 hidden lg:block rounded-full  shadow-md" style="background: #146818;"  >
+        <a href="">
+        <div class=" rounded-full p-14 hover:scale-105 hover:cursor-pointer transition-category" style="background: #43A948;">
+
+        
+        <img src="../../assets/images/Console.png" class="rounded-2xl h-36" alt="">
+       
+      </div>
+        </a>
+      </div>
+    </div>
+    <div class="relative block lg:hidden">
+      <owl-carousel-o
+      style="background:none;" 
+        class="flex flex-wrap gap-2 md:gap-5 mb-10 justify-center md:justify-start"
+        [options]="customOptions2"
+      >
+        <ng-container>
+          <ng-template carouselSlide  class=" lg:flex lg:flex-row justify-evenly hidden  ">
+            <div class="p-3 rounded-full  " style="background: #bd8f11;"  >
+              <a href="">
+              <div class=" rounded-full p-14 hover:scale-105 hover:cursor-pointer transition-category" style="background: #F6BC16;">
+      
+              
+              <img src="../../assets/images/pop.png" class="rounded-2xl max-w-48 " alt="">
+             
+            </div>
+          </a>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide  class=" lg:flex lg:flex-row justify-evenly hidden h-32  ">
+            <div class="p-3 rounded-full " style="background: #056081;"  >
+              <a href="">
+              <div class=" rounded-full p-14 hover:scale-105 hover:cursor-pointer transition-category" style="background: #0A98CC;">
+      
+              
+              <img src="../../assets/images/controller.png" class="rounded-2xl max-w-48" alt="">
+             
+            </div>
+          </a>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide  class=" lg:flex lg:flex-row justify-evenly hidden  ">
+            <div class="p-3 rounded-full " style="background: #146818;"  >
+              <a href="">
+              <div class=" rounded-full p-14 hover:scale-105 hover:cursor-pointer transition-category" style="background: #43A948;">
+      
+              
+              <img src="../../assets/images/Console.png" class="rounded-2xl  max-w-48" alt="">
+             
+            </div>
+              </a>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+ 
+  </div>

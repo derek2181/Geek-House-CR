@@ -1,7 +1,8 @@
 .example-card {
     max-width: 225px;
     min-width: 200px;
-    border: #7a7a7a 1px solid !important;
+    border: #cfcece89 1px solid !important;
+    border-radius: 10px;
   }
   mat-card-content,mat-card-actions{padding: 0;}
   
