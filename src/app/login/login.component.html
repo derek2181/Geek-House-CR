@@ -1,6 +1,6 @@
 <div class="mx-auto text-center min-h-screen mt-32">
     <h1 class="mb-10 text-3xl text-center font-semibold">Iniciar Sesión</h1>
-    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <form (ngSubmit)="signIn()" [formGroup]="loginForm">
         <div class="w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 mx-auto">
             <div class="mb-3">
                 <mat-form-field class="w-full" appearance="fill">
@@ -17,23 +17,30 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-            <div>
+            <div class="mb-3">
                 <mat-form-field class="w-full" appearance="fill">
                     <mat-label>Contraseña</mat-label>
                     <mat-icon matPrefix fontIcon="lock"/>
-                    <input formControlName="password" 
-                            matInput  
+                    <input  matInput  
                             id="password" 
-                            [type]="hide ? 'password' : 'text'"/>
+                            name="password" 
+                            formControlName="password" 
+                            [type]="hide ? 'password' : 'text'"
+                    />
                     <button mat-icon-button 
                             matSuffix
                             class="mr-1" 
                             (click)="TogglePasswordVisibility($event)" 
                             [attr.aria-label]="'Hide password'" 
                             [attr.aria-pressed]="hide"
+                            type="button"
                     >
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
+                    <mat-error class="text-xs"
+                        *ngIf="password?.invalid">
+                        {{getErrorMessage(password)}}
+                    </mat-error>
                 </mat-form-field>
             </div>
         </div>
