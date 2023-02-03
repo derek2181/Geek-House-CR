@@ -1,0 +1,15 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px 10px;
+}
+
+.grid-container > *{
+    margin: 0 auto;
+}
+
+@media not all and (max-width: 1280px) {
+    .grid-container{
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
