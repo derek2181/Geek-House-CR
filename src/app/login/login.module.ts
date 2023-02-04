@@ -7,9 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, LoginFormComponent],
   imports: [
     CommonModule,
     LoginRoutingModule,
@@ -17,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatProgressBarModule,
     ReactiveFormsModule,
   ],
 })

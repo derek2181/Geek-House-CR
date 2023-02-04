@@ -1,0 +1,54 @@
+<form (ngSubmit)="signIn()" [formGroup]="loginForm">
+    <div class="w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 mx-auto">
+        <div class="mb-3">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Nombre de usuario</mat-label>
+                <input matInput
+                       formControlName="username"
+                       name="username" 
+                       id="username"
+                       />
+                <mat-icon matPrefix fontIcon="person"/>
+                <mat-error class="text-xs"
+                    *ngIf="username?.invalid">
+                    {{getErrorMessage(username)}}
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="mb-3">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <mat-icon matPrefix fontIcon="lock"/>
+                <input  matInput  
+                        id="password" 
+                        name="password" 
+                        formControlName="password" 
+                        [type]="hide ? 'password' : 'text'"
+                />
+                <button mat-icon-button 
+                        matSuffix
+                        class="mr-1" 
+                        (click)="TogglePasswordVisibility($event)" 
+                        [attr.aria-label]="'Hide password'" 
+                        [attr.aria-pressed]="hide"
+                        type="button"
+                >
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error class="text-xs"
+                    *ngIf="password?.invalid">
+                    {{getErrorMessage(password)}}
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="progress-bar-container" *ngIf="showProgressBar">
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+        <div class="api-error-container" *ngIf="showAPIerror">
+            <mat-error class="text-xs">
+               sucedio un error
+            </mat-error>
+        </div>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Entrar</button>
+</form>

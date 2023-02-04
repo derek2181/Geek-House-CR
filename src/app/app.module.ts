@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +21,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     SharedModule,
     MatSidenavModule,
     MatIconModule,
-    CarouselModule
+    CarouselModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
