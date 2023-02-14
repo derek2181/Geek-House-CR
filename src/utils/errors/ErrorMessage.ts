@@ -5,6 +5,7 @@ export class ErrorMessage {
   constructor() {
     throw Error("Cannot instantiate a static class");
   }
+  
   private static required: string = "Este campo es obligatorio";
   private static default: string = "Hay un error en este campo";
 

@@ -8,13 +8,14 @@
         class="flex flex-wrap gap-2 md:gap-5 mb-10 justify-center md:justify-start"
         [options]="customOptions"
       >
-        <ng-container *ngFor="let _ of [].constructor(10)">
+        <ng-container *ngFor="let product of products">
           <ng-template carouselSlide>
             <div class="flex justify-center">
-              <app-product-card></app-product-card></div
+              <app-product-card [product]="product"></app-product-card></div
           ></ng-template>
         </ng-container>
       </owl-carousel-o>
     </div>
+ 
     <mat-divider></mat-divider>
   </div>
