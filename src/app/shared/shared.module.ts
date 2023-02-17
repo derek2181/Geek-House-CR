@@ -5,6 +5,7 @@ import { ProductCardModule } from './components/product-card/product-card.module
 import { FooterModule } from './components/footer/footer.module';
 import { ProgressBarModule } from './components/progress-bar/progress-bar.module';
 import { ErrorLabelModule } from './components/error-label/error-label.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
@@ -15,7 +16,14 @@ import { ErrorLabelModule } from './components/error-label/error-label.module';
     FooterModule,
     ProgressBarModule,
     ErrorLabelModule,
+    HttpClientModule,
   ],
-  exports: [HeaderModule, ProductCardModule, FooterModule, ProgressBarModule],
+  exports: [
+    HeaderModule,
+    ProductCardModule,
+    FooterModule,
+    ProgressBarModule,
+    HttpClientModule,
+  ],
 })
 export class SharedModule {}

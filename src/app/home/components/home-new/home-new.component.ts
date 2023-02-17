@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ProductModel } from 'src/app/shared/models/product.model';
 @Component({
   selector: 'app-home-new',
   templateUrl: './home-new.component.html',
   styleUrls: ['./home-new.component.css']
 })
 export class HomeNewComponent {
+ 
+  @Input() products : ProductModel[]=[];
+  
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
