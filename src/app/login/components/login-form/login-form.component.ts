@@ -6,15 +6,16 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { catchError } from 'rxjs';
 import { ErrorMessage } from 'src/utils/errors/ErrorMessage';
 import { LoginModel } from '../../models/login.model';
 import { LoginService } from '../../services/login.service';
+import { IsFormValid } from 'src/utils/validations/Validations';
+import { finalize } from 'rxjs';
 
-//TODO: 
-// 1. Separar en componentes mas pequeños aun.
-// 2. Cambiar la implementación de JSON SERVER a la de la API
-// 3. 
+//TODO:
+// 1. Separar en componentes mas pequeños aun. DONE
+// 2. Cambiar la implementación de JSON SERVER a la de la API.
+// 3. Separar en componentes los divs de los inputs del login.
 
 @Component({
   selector: 'app-login-form',
@@ -23,9 +24,9 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginFormComponent {
   public loginForm!: FormGroup;
-  public hide = true;
-  public showProgressBar = false;
-  public showAPIerror = false;
+  public hidePassword = true;
+  public responseError = '';
+  public progressBarVisibility = false;
   public getErrorMessage = ErrorMessage.getErrorMessage;
 
   constructor(
@@ -33,15 +34,6 @@ export class LoginFormComponent {
     public _loginService: LoginService,
     private _router: Router
   ) {}
-
-  ngOnInit(): void {
-    this.InitializeForm();
-  }
-
-  public TogglePasswordVisibility(e: MouseEvent) {
-    e.stopPropagation();
-    this.hide = !this.hide;
-  }
 
   public get username(): FormControl {
     return this.loginForm.get('username') as FormControl;
@@ -51,32 +43,49 @@ export class LoginFormComponent {
     return this.loginForm.get('password') as FormControl;
   }
 
-  public signIn(): void {
-    if (!this.loginForm.invalid) {
-      this.showProgressBar = true;
+  ngOnInit(): void {
+    this.InitializeForm();
+    this.username.valueChanges.subscribe((value) => {
+      this.responseError = '';
+    });
+    this.password.valueChanges.subscribe((value) => {
+      this.responseError = '';
+    });
+  }
+
+  public TogglePasswordVisibility(e: MouseEvent) {
+    e.stopPropagation();
+    this.hidePassword = !this.hidePassword;
+  }
+
+  public SignIn(): void {
+    if (IsFormValid(this.loginForm)) {
+      this.responseError = '';
+      this.progressBarVisibility = true;
 
       const login: LoginModel = {
         username: this.username.value,
         password: this.password.value,
       };
 
-      this._loginService.signIn(login).subscribe({
-        next: (user) => {
+      this._loginService
+        .signIn(login)
+        .pipe(
+          finalize(() => {
+            this.progressBarVisibility = false;
+          })
+        )
+        .subscribe((user) => {
           //Implementación usando JSON SERVER, un paquete que crea una db rapidisimo para pruebas en front end, esto cambiara cuando este el endpoint
           //-------------------------------------------------------------------------------------------------
           if (user[0]) {
-            console.log("Se encontro!",user[0]);
-            this._router.navigate(['/'])
+            this._router.navigate(['/']);
           } else {
-            console.log('No se encontro nada');
+            this.responseError =
+              'Parece que hay un error en la contraseña o el usuario'; //Mensaje que venga desde el back?
           }
           //-------------------------------------------------------------------------------------------------
-          this.showProgressBar = false;
-        },
-        error: (err) => {
-          this.showProgressBar = false;
-        },
-      });
+        });
     }
   }
 
@@ -86,5 +95,4 @@ export class LoginFormComponent {
       password: ['', [Validators.required]],
     });
   }
-
 }
