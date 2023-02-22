@@ -1,0 +1,116 @@
+<div class="xl:mx-72 mx-3 pt-9">
+    <div class="lg:grid lg:grid-cols-2">
+        <div class="xl:flex">
+            <div class="mx-2">
+                <div class="mb-5 flex justify-center ">
+                    
+                     <!-- <img class="w-72 h-72 lg:w-80 lg:h-80 xl:w-100 xl:h-100 "
+                        [src]="endpoint + '/' + product?.image?.id"
+                        alt="" />  -->
+                        <lib-ngx-image-zoom
+    [thumbImage]=myThumbnail
+    [fullImage]=myFullresImage
+    [magnification]="0.7"
+    [enableLens]="true"
+    [lensWidth]="150"
+    [lensHeight]="150"
+></lib-ngx-image-zoom>
+                </div>
+                <div class="lg:hidden ">
+                    <div class="flex gap-2 flex-wrap">
+
+                 
+                    <img class="h-16 w-16 border-2"
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fderf9v1xhwwx1.cloudfront.net%2Fimage%2Fupload%2Fq_60%2Fcprd%2Fcatalog%2Fproduct%2Fp%2Fo%2Fpop-animation-one-piece-luffy_1.jpg%3Fscale.width%3D112%25202x&f=1&nofb=1&ipt=0a184b7e5b5f74d043a7ace7692e163be142f1596ff5bca3af3268f27e9d2ddf&ipo=images"
+                        alt="" />
+                    <img class="h-16 w-16 border-2"
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fderf9v1xhwwx1.cloudfront.net%2Fimage%2Fupload%2Fq_60%2Fcprd%2Fcatalog%2Fproduct%2Fp%2Fo%2Fpop-animation-one-piece-luffy_2.jpg%3Fscale.width%3D56&f=1&nofb=1&ipt=5969558c7d2c49af23bf06c0864aacb960b1731efac5bf6a9dd16980fdcfa14c&ipo=images"
+                        alt="" />
+                    <img class="h-16 w-16 border-2"
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs1.thcdn.com%2Fproductimg%2F960%2F960%2F11246407-2814365608794644.jpg&f=1&nofb=1&ipt=096170de34fcd1f878808b4f980aa10ac469d24be2f1970912156dbb16d7a25d&ipo=images"
+                        alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" flex flex-col justify-between lg:ml-5">
+          
+          
+           <div>
+
+          
+            <div class="flex flex-col  lg:mt-0 mt-5" >
+                <h1 class="text-2xl font-bold mb-2">
+                    {{product.name}}
+        
+                </h1>
+                <span *ngIf="product.availability.id == 1"
+                class="text-xs mb-5  py-1 px-2.5 w-fit leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-700 text-white rounded">DISPONIBLE</span>
+                <span *ngIf="product.availability.id == 2"
+                class="text-xs mb-5  py-1 px-2.5 w-fit leading-none text-center whitespace-nowrap align-baseline font-bold bg-yellow-700 text-white rounded">PREORDEN</span>
+                <span *ngIf="product.availability.id == 3"
+                class="text-xs mb-5  py-1 px-2.5 w-fit leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-700 text-white rounded">AGOTADO</span>
+                <p class="text-base  mb-5">
+                    {{product.description}}
+                </p>
+                <mat-divider></mat-divider>
+            </div>
+            <div class="flex flex-col ">
+                <div class="flex justify-between my-5 mx-5">
+         
+                <h1 class="text-lg">Precio: ₡<span>{{product.price}}</span></h1>
+                <h1 class="text-lg"><span class="font-bold">{{product.stock}}</span> en stock</h1>
+                </div>
+                <mat-divider></mat-divider>
+            </div>
+       
+            <div class="w-full  my-5 ">
+               
+                <div class="flex justify-center">
+
+                
+                <button class="w-fit p-8 rounded-lg " style="padding:20px;border-radius:10px" mat-raised-button rounded color="primary">
+                    Haz tu pedido ahora
+                </button>
+            </div>
+               
+            </div>
+        </div>
+            <div class="mb-10" >
+                <div class="flex justify-center items-center">
+                    <h1 class="mt-0">Metodos de pago.</h1>
+                    <img class="w-64 h-10"  src="../../assets/images/payment-methods.png" alt="" />
+                  
+                </div>
+                <p class="text-xs text-center">Métodos de pago aceptados por GeekHouse CR. Opción de pago a 12 meses con minicuotas. GeekHouseCR brinda servicio de calidad y se preocupa por que el producto llegue bien a manos del cliente</p>
+               
+            </div>
+                 
+           </div>
+    </div>
+    <div class=" gap-2 flex-wrap mx-2 hidden lg:flex ">
+        <img class="h-16 w-16 border-2"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fderf9v1xhwwx1.cloudfront.net%2Fimage%2Fupload%2Fq_60%2Fcprd%2Fcatalog%2Fproduct%2Fp%2Fo%2Fpop-animation-one-piece-luffy_1.jpg%3Fscale.width%3D112%25202x&f=1&nofb=1&ipt=0a184b7e5b5f74d043a7ace7692e163be142f1596ff5bca3af3268f27e9d2ddf&ipo=images"
+            alt="" />
+        <img class="h-16 w-16 border-2"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fderf9v1xhwwx1.cloudfront.net%2Fimage%2Fupload%2Fq_60%2Fcprd%2Fcatalog%2Fproduct%2Fp%2Fo%2Fpop-animation-one-piece-luffy_2.jpg%3Fscale.width%3D56&f=1&nofb=1&ipt=5969558c7d2c49af23bf06c0864aacb960b1731efac5bf6a9dd16980fdcfa14c&ipo=images"
+            alt="" />
+        <img class="h-16 w-16 border-2"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs1.thcdn.com%2Fproductimg%2F960%2F960%2F11246407-2814365608794644.jpg&f=1&nofb=1&ipt=096170de34fcd1f878808b4f980aa10ac469d24be2f1970912156dbb16d7a25d&ipo=images"
+            alt="" />
+    </div>
+    <div class="relative">
+        <h1 class="text-2xl font-semibold my-5">Articulos relacionados</h1>
+        <owl-carousel-o
+          class="flex flex-wrap gap-2 md:gap-5 mb-10 justify-center md:justify-start"
+          [options]="customOptions"
+        >
+          <ng-container *ngFor="let number of [0,1,2,3,4,2,34,1]">
+            <ng-template carouselSlide>
+              <div class="flex justify-center">
+                <app-product-card  ></app-product-card></div
+            ></ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+</div>

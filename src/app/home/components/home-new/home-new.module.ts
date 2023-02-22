@@ -17,4 +17,7 @@ import { CommonModule } from '@angular/common';
     MatDividerModule
   ], exports:[HomeNewComponent]
 })
-export class HomeNewModule { }
+export class HomeNewModule {
+  myThumbnail="https://wittlock.github.io/ngx-image-zoom/assets/thumb.jpg";
+  myFullresImage="https://wittlock.github.io/ngx-image-zoom/assets/fullres.jpg";
+ }

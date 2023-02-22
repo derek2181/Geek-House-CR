@@ -1,0 +1,14 @@
+::ng-deep .ngxImageZoomFullContainer.ngxImageZoomLensEnabled{
+  border:2px solid #0A98CC !important;
+}
+::ng-deep .ngxImageZoomContainer>img{
+  height: 100%!important;
+  width: 100% !important;
+  cursor: zoom-in;
+}
+::ng-deep .ngxImageZoomContainer {
+  width: 100% !important ;
+  height: 100% !important;
+}
+
+

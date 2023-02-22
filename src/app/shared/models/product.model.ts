@@ -6,5 +6,8 @@ export interface ProductModel{
     name: string,
     price: number,
     image: ImageModel,
-    availability:AvailabilityModel
+    availability:AvailabilityModel,
+    path:string,
+    description:string,
+    stock:number
 }

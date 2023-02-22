@@ -9,6 +9,7 @@ import { NavListModule } from './nav-list/nav-list.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ HeaderComponent],
@@ -21,7 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatSidenavModule,
     NavListModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    RouterModule
    
   ],
   exports:[HeaderComponent, NavListModule]

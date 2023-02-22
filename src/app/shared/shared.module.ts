@@ -4,6 +4,8 @@ import { HeaderModule } from './components/header/header.module';
 import { ProductCardModule } from './components/product-card/product-card.module';
 import { FooterModule } from './components/footer/footer.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { NotFoundModule } from './components/not-found/not-found.module';
 
 
 
@@ -15,10 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderModule,
     ProductCardModule,
     FooterModule,
-    HttpClientModule
+    HttpClientModule,
+    NotFoundModule
   ],
   exports:[ 
-    HeaderModule,ProductCardModule,FooterModule,HttpClientModule
+    HeaderModule,ProductCardModule,FooterModule,HttpClientModule,NotFoundModule
   ]
 })
 export class SharedModule {

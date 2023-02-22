@@ -6,7 +6,15 @@ module.exports = {
       backgroundImage: {
         'landing-mobile': "url('/assets/images/backgroundLandingMobile.png)",
         'landing-desktop': "url('/assets/images/backgroundLanding.png')",
-      }
+      },
+      height:{
+        '98':'32rem',
+        '100':'40rem'
+      },
+      width:{
+        '98':'32rem',
+        '100':'40rem'
+      },
     },
   },
   plugins: [],

@@ -8,7 +8,7 @@ import { ProductService } from '../shared/services/product.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   public products : ProductModel[]=[];
   constructor(public productService : ProductService){}
   ngOnInit():void{

@@ -1,11 +1,20 @@
-<mat-card class="example-card p-5 mb-5 flex justify-center rounded-xl " >
-  <span class="inline-block py-1 px-2 leading-none text-sm text-center whitespace-nowrap align-baseline font-bold bg-red-700 text-white rounded">AGOTADO</span>
+<mat-card class="example-card p-5 mb-5 rounded-xl h-72 w-60" >
+  <span *ngIf="product?.availability?.id===1" class="inline-block py-1 px-2 w-full leading-none text-sm text-center whitespace-nowrap align-baseline font-bold bg-green-700 text-white ">DISPONIBLE</span>
 
-    <img mat-card-image class="cursor-pointer" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi5.walmartimages.com%2Fasr%2F4e1dac85-6415-407f-bcf6-508532af5f8b.3f5b061fa9aa5bacc8d5270067f2c378.jpeg&f=1&nofb=1&ipt=2795a35f0f0a4ff7f8f1c651090cbf4ea3b62eb344bb3929438bbc17383af9cf&ipo=images" alt="Photo of a Shiba Inu">
+  <span *ngIf="product?.availability?.id===2" class="inline-block py-1 px-2 w-full leading-none text-sm text-center whitespace-nowrap align-baseline font-bold bg-yellow-700 text-white ">PREORDEN</span>
+
+  <span *ngIf="product?.availability?.id===3" class="inline-block py-1 px-2 w-full leading-none text-sm text-center whitespace-nowrap align-baseline font-bold bg-red-700 text-white ">AGOTADO</span>
+
+    <img mat-card-image class="cursor-pointer max-h-28  w-28" [src]="endpoint + '/' + product?.image?.id"  alt="Photo of a Shiba Inu">
+  
     <mat-card-content class="mt-3" >
-      <a class="text-sm mt-3 cursor-pointer hover:underline mb-0 font-semibold"  routerLink="['/']" >
+      <!-- <a class="text-sm mt-3 cursor-pointer hover:underline mb-0 font-semibold"  [routerLink]="['/detalles', product?.path]" >
+       {{product?.name}}
+      </a> -->
+       <a class="text-sm mt-3 cursor-pointer hover:underline mb-0 font-semibold"  [routerLink]="['/detalles', product?.path]" >
        {{product?.name}}
       </a>
-      <p class="text-md m-0">₡<span >15000</span></p>
+      <p class="text-md m-0">₡<span > {{product?.price}}</span></p>
     </mat-card-content>
+
 </mat-card>

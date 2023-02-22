@@ -9,12 +9,16 @@ import { ProductModel } from '../models/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-  endpoint=env.LOCAL.url + "/products";
+ private endpoint=env.URL + "/products";
   constructor(private _httpClient:HttpClient) { }
   
   public getRecentProducts(): Observable<ProductModel[]>{
-  
+    
     return this._httpClient.get<ProductModel[]>(this.endpoint + "/recent");
     
+  }
+
+  public getProductByName(name: string): Observable<ProductModel>{
+    return this._httpClient.get<ProductModel>(this.endpoint+ "/"+name);
   }
 }
