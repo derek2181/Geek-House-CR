@@ -25,11 +25,13 @@ export class LoginService {
       //Implementación usando JSON SERVER, un paquete que crea una db rapidisimo para pruebas en front end
 
       //-------------------------------------------------------------------------------------------------
-      const url = `${API_URL + this.endpoint}?username=${login.username}&password=${login.password}`;
-      const body = {};
-      const headers = {};
+      
+        const url = `${API_URL + this.endpoint}?username=${login.username}&password=${login.password}`;
+        const body = {};
+        const headers = {};
 
-      return this._httpClient.get<UserModel[]>(url); 
+        return this._httpClient.get<UserModel[]>(url); 
+      
       //-------------------------------------------------------------------------------------------------
 
       /* Implementacion posible con el endpoint de la api

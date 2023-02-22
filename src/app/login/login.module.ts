@@ -7,20 +7,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginFormComponent } from './components/login-form/login-form.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { LoginFormModule } from './components/login-form/login-form.module';
 
 @NgModule({
-  declarations: [LoginComponent, LoginFormComponent],
+  declarations: [LoginComponent],
   imports: [
     CommonModule,
     LoginRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    MatProgressBarModule,
-    ReactiveFormsModule,
+    LoginFormModule,
   ],
 })
 export class LoginModule {}

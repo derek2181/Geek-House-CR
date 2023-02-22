@@ -1,0 +1,9 @@
+.error-container{
+    position: relative;
+    padding: 0 16px;
+}
+
+.error-container > * {
+    position: absolute;
+    top: -35px;
+}
