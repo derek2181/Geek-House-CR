@@ -15,6 +15,7 @@ export class DetailsComponent implements OnInit {
   myFullresImage :string = ""
   public name : string = "";
   public product = {} as ProductModel;
+  public images=[] as string[];
   constructor(private route : ActivatedRoute,private productService : ProductService,private router : Router){
 
   }
@@ -23,10 +24,13 @@ export class DetailsComponent implements OnInit {
       this.name=param['name'];
 
     this.productService.getProductByName(this.name).subscribe({next:(response)=>{
-      
+  
       this.product=response;
-      this.myThumbnail=this.endpoint + "/" + this.product?.image?.id;
-      this.myFullresImage=this.endpoint + "/" + this.product?.image?.id;
+      this.images[0]=this.endpoint + "/" + this.product?.images[0]?.id;
+      this.images[1]=this.endpoint + "/" + this.product?.images[1]?.id;
+      this.images[2]=this.endpoint + "/" + this.product?.images[2]?.id;
+      
+      console.log(this.images);
     },
     error:()=>{
       console.log("a")

@@ -6,6 +6,7 @@ export interface ProductModel{
     name: string,
     price: number,
     image: ImageModel,
+    images:ImageModel[],
     availability:AvailabilityModel,
     path:string,
     description:string,
